@@ -1,0 +1,22 @@
+package datumizeserver.component;
+//package datumizeserver.component;
+//
+///**
+// * @author hp
+// *
+// */
+//public class SumValue {
+//	
+//	private static int sumValue = 0;
+//	
+//	public static void addToValue(int amount) {
+//		sumValue += amount;
+//	}
+//	
+//	public static String getValue() {
+//		return String.valueOf(sumValue);
+//	}
+//	
+//	
+//
+//}

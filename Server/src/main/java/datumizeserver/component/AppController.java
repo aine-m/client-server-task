@@ -1,0 +1,103 @@
+package datumizeserver.component;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import static java.net.HttpURLConnection.HTTP_OK;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+
+public class AppController implements HttpHandler {
+
+	private static AppService service = new AppService();
+	private byte[] response;
+
+	/**
+	 * Directs the request to the correct handler then creates the request response.
+	 * This method calls the directRequest method and createResponse method.
+	 */
+	public void handle(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Handling request");
+		directRequest(httpExchange);
+		createResponse(httpExchange);
+	}
+
+	/**
+	 * Directs the flow of control to the correct handler based on matching the
+	 * request URL
+	 * 
+	 * @param httpExchange
+	 * @throws IOException
+	 */
+	private void directRequest(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Directing request to GET or POST handlers");
+		String url = httpExchange.getRequestURI().toString().toLowerCase();
+		String reqType = httpExchange.getRequestMethod();
+		App.logger.info(url);
+
+		// ensure request type and request url are correct before taking action
+		if (reqType.equals("GET") && url.equals("/GetValue".toLowerCase())) {
+			getValue();
+		} else if (reqType.equals("POST") && url.equals("/AddValue".toLowerCase())) {
+			postAddValue(httpExchange.getRequestBody());
+		} else {
+			response = "Request not recognised.  No action taken.".getBytes();
+			App.logger.warning("Unrecognisable request.  No action taken.");
+		}
+
+	}
+
+	/**
+	 * Creates the response for a request
+	 * 
+	 * @param httpExchange
+	 * @throws IOException
+	 */
+	private void createResponse(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Creating response to request");
+		httpExchange.sendResponseHeaders(HTTP_OK, response.length);
+		OutputStream os = httpExchange.getResponseBody();
+		os.write(response);
+		os.close();
+	}
+
+	/**
+	 * Calls the GET handler from the AppService class
+	 */
+	public void getValue() {
+		response = service.handleGet();
+	}
+
+	/**
+	 * Calls the POST handler from the AppService class, passing the request body
+	 * via an input stream.
+	 * 
+	 * @param inputStream
+	 * @throws IOException
+	 */
+	public void postAddValue(InputStream inputStream) throws IOException {
+		response = service.handlePost(readBody(inputStream));
+		inputStream.close();
+	}
+
+	/**
+	 * A method to read the request body for POST requests. Accepts an InputStream
+	 * and converts it to a byte array for passing to the POST handler method in the
+	 * service class.
+	 * 
+	 * @param inputStream
+	 * @return byte[] containing the request body
+	 * @throws IOException
+	 */
+	private byte[] readBody(InputStream inputStream) throws IOException {
+		byte[] reqBody = new byte[10];
+		int data = inputStream.read(reqBody);
+		while (data != -1) {
+			data = inputStream.read(reqBody);
+		}
+		return reqBody;
+	}
+
+}

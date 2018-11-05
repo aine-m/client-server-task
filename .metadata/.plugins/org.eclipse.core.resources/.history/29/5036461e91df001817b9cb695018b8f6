@@ -1,0 +1,59 @@
+package Datumize.Client;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+
+public class App 
+{
+	
+	private static String getUrlExt = "GetValue";
+	private static String postUrlExt = "AddValue=";
+	
+	
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello Client!" );
+        
+        URL url;
+		try {
+			url = new URL("localhost:8080");
+			
+			//create GET request method
+			HttpURLConnection getConn = (HttpURLConnection) url.openConnection();
+			getConn.setRequestMethod("GET");
+			getConn.setConnectTimeout(5000);
+			getConn.setReadTimeout(5000);
+			
+			
+			//create POST request method	
+			HttpURLConnection postConn = (HttpURLConnection) url.openConnection();
+			postConn.setRequestMethod("POST");
+			postConn.setConnectTimeout(5000);
+			postConn.setReadTimeout(5000);
+			
+			int addVal = 1;
+			String paramString = "Add=" + String.valueOf(addVal);			
+			
+			postConn.setDoOutput(true);
+			DataOutputStream outStream = new DataOutputStream(postConn.getOutputStream());
+			outStream.writeBytes(paramString);
+			outStream.flush();
+			outStream.close();
+			
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
+        
+    }
+}

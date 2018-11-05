@@ -1,0 +1,101 @@
+package datumizeserver.component;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import static java.net.HttpURLConnection.HTTP_OK;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+
+public class AppController implements HttpHandler {
+
+	private AppService service = new AppService();
+	private byte[] response;
+
+	/**
+	 * Directs the request to the correct handler then creates the request response.
+	 */
+	public void handle(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Handling request");
+		matchRequest(httpExchange);
+		createResponse(httpExchange);
+	}
+
+	/**
+	 * Calls the GET handler from the AppService class
+	 */
+	public void getValue() {
+		response = service.handleGet();
+	}
+
+	/**
+	 * Calls the POST handler from the AppService class, passing the request body
+	 * via an input stream.
+	 * 
+	 * @param inputStream
+	 * @throws IOException
+	 */
+	public void postValueAdder(InputStream inputStream) throws IOException {
+		//response = service.handlePost(readBody(inputStream));
+		service.handlePost(readBody(inputStream));
+		inputStream.close();
+	}
+
+	/**
+	 * A method to read the request body for POST requests
+	 * 
+	 * @param inputStream
+	 * @return byte[] containing the request body
+	 * @throws IOException
+	 */
+	private byte[] readBody(InputStream inputStream) throws IOException {
+		byte[] reqBody = new byte[10];
+		int data = inputStream.read(reqBody);
+		while (data != -1) {
+			data = inputStream.read(reqBody);
+		}
+		return reqBody;
+	}
+
+	/**
+	 * Directs the flow of control to the correct handler based on mathcing the
+	 * request uri
+	 * 
+	 * @param httpExchange
+	 * @throws IOException
+	 */
+	private void matchRequest(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Directing request to GET or POST");
+		String toMatch = httpExchange.getRequestURI().toString().toLowerCase();
+
+		if (toMatch.contains("get".toLowerCase())) {
+			getValue();
+		} else if (toMatch.contains("add".toLowerCase())) {
+			postValueAdder(httpExchange.getRequestBody());
+		} else {
+			response = "Request not recognised.  No action taken.".getBytes();
+			App.logger.warning("Unrecognisable request.  No action taken.");
+		}
+	}
+
+	
+	/**
+	 * Creates the response for a request
+	 * @param httpExchange
+	 * @throws IOException
+	 */
+	private void createResponse(HttpExchange httpExchange) throws IOException {
+		App.logger.info("Creating response to request");
+		httpExchange.sendResponseHeaders(HTTP_OK, response.length);
+		System.out.println(response);
+		System.out.println(response.length);
+		if (response.length > 0) {
+			OutputStream os = httpExchange.getResponseBody();
+			os.write(response);
+			os.close();
+		}
+	}
+
+}

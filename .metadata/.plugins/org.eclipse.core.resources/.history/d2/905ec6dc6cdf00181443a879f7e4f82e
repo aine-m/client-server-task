@@ -1,0 +1,12 @@
+package Datumize.Server;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        AppHttpHandler handler = new AppHttpHandler();
+        AppHttpServer server = new AppHttpServer(8080, "", handler);
+        server.start();        
+    }
+}

@@ -1,0 +1,17 @@
+package datumizeclient.component;
+
+public class App 
+{
+	
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello Client!" );
+        AppClient client = new AppClient();
+        try {
+			client.executeSynchronous(RequestTypes.POST);
+			client.executeSynchronous(RequestTypes.GET);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+}

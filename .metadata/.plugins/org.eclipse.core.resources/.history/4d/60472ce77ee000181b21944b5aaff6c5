@@ -1,0 +1,58 @@
+package Datumize.Client;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class HttpClientRequests {
+	
+	
+	private static String getUrlExt = "/GetValue";
+	private static String postUrlExt = "/AddValue";
+	private static String postParams = "val=";
+	
+	
+	public static HttpURLConnection createGetRequest(String url, int connTimeout, int readTimeout) throws IOException {
+		url = url + getUrlExt;
+		URL fullUrl = new URL(url);
+		HttpURLConnection getConn = (HttpURLConnection) fullUrl.openConnection();
+		getConn.setRequestMethod("GET");
+		getConn.setConnectTimeout(connTimeout);
+		getConn.setReadTimeout(readTimeout);
+		
+		return getConn;
+	}
+	
+	public static HttpURLConnection createPostRequest(String url, int connTimeout, int readTimeout, int addValue) throws IOException {
+		url = url + postUrlExt;
+		URL fullUrl = new URL(url);
+
+		HttpURLConnection postConn = (HttpURLConnection) fullUrl.openConnection();
+		postConn.setRequestMethod("POST");
+		postConn.setConnectTimeout(connTimeout);
+		postConn.setReadTimeout(readTimeout);
+		
+		postParams = postParams + String.valueOf(addValue);
+		postConn.setDoOutput(true);
+		DataOutputStream outStream = new DataOutputStream(postConn.getOutputStream());
+		outStream.write(postParams.getBytes());
+		outStream.flush();
+		outStream.close();
+		
+		return postConn;
+	}
+	
+	
+	private static void getResponse(HttpURLConnection conn) throws IOException {
+		
+		int respCode = conn.getResponseCode();
+		String respMsg = conn.getResponseMessage();
+	    
+        
+        
+    }
+
+	
+	
+}

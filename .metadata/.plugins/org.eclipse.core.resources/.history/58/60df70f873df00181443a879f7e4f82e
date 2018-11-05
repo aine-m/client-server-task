@@ -1,0 +1,30 @@
+package Datumize.Server;
+
+import java.io.IOException;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+
+public class AppPutHttpHandler implements HttpHandler {
+	
+public void handle(HttpExchange httpExchange) throws IOException {
+	System.out.println( "In POST handler" );
+		try {
+			String input = httpExchange.getRequestBody().toString();
+			System.out.println( input );
+			int addVal = Integer.parseInt(input);
+			
+			SumValue.addToValue(addVal);
+			System.out.println( SumValue.getValue() );
+			httpExchange.sendResponseHeaders(200, 0);
+			System.out.println( "Finished POST handler" );
+		} catch(IOException e) {
+			//handle exception
+			//httpExchange.sendResponseHeaders(400 , arg1);
+		} catch (NumberFormatException e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

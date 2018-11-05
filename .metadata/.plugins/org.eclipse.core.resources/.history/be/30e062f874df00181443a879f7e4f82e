@@ -1,0 +1,67 @@
+package Datumize.Server;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+
+public class AppPutHttpHandler implements HttpHandler {
+
+	public void handle(HttpExchange httpExchange) throws IOException {
+		System.out.println("In POST handler");
+		try {
+			InputStream input = httpExchange.getRequestBody();
+			String inputString = getStringFromInputStream(input);
+			
+			System.out.println(inputString);
+			
+			int addVal = Integer.parseInt(inputString);
+			System.out.println(addVal);
+			SumValue.addToValue(addVal);
+			
+			System.out.println(SumValue.getValue());
+			httpExchange.sendResponseHeaders(200, 0);
+			System.out.println("Finished POST handler");
+		} catch (IOException e) {
+			// handle exception
+			// httpExchange.sendResponseHeaders(400 , arg1);
+		} catch (NumberFormatException e) {
+			// TODO: handle exception
+		}
+
+	}
+
+	private static String getStringFromInputStream(InputStream is) {
+		System.out.println("In parser");
+		BufferedReader br = null;
+		StringBuilder sb = new StringBuilder();
+
+		String line;
+		try {
+
+			br = new BufferedReader(new InputStreamReader(is));
+			while ((line = br.readLine()) != null) {
+				sb.append(line);
+				System.out.println(sb);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("In finally");
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return sb.toString();
+	}
+
+}

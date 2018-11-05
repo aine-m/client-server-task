@@ -1,0 +1,26 @@
+package datumizeserver.component;
+
+import java.nio.charset.StandardCharsets;
+
+public class AppService {
+	
+	private static float totalValue = 0;
+	
+//	public byte[] handlePost(byte[] requestBody) {
+//		String requestString = new String(requestBody, StandardCharsets.UTF_8).trim();
+//		float addVal = Float.parseFloat(requestString);
+//		totalValue += addVal;
+//		return String.valueOf(totalValue).trim().getBytes();
+//	}
+	
+	public void handlePost(byte[] requestBody) {
+		String requestString = new String(requestBody, StandardCharsets.UTF_8).trim();
+		float addVal = Float.parseFloat(requestString);
+		totalValue += addVal;
+	}
+	
+	public byte[] handleGet() {
+		return String.valueOf(totalValue).trim().getBytes();
+	}
+
+}

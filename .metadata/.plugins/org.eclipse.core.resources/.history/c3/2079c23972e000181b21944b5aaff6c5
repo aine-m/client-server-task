@@ -1,0 +1,13 @@
+package Datumize.Server;
+
+public class AppService {
+	
+	public byte[] handlePost(byte[] requestBody) {
+		
+		System.out.println(requestBody.toString());
+		
+		return new String(requestBody).trim().getBytes();
+	}
+	
+
+}

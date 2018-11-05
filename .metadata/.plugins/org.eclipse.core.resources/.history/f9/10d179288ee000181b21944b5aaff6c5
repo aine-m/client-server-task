@@ -1,0 +1,79 @@
+package datumizeclient.component;
+
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.concurrent.Executors;
+
+public class AppClient extends AbstractRemoteCall<String> {
+
+	private final String baseUrl = "localhost:8080";
+
+	public AppClient() {
+		super(Executors.newFixedThreadPool(5));
+	}
+
+	public String executeSynchronous(RequestTypes requestType, int addVal) throws Exception {
+		HttpURLConnection con;
+		String response;
+		
+		if(requestType.equals(RequestTypes.GET){
+			con = createGetConn();
+		}else if(requestType.equals(RequestTypes.POST)) {
+			con = createPostConn(addVal);
+		}
+		
+		con.connect();
+		response = Integer.toString(con.getResponseCode());
+		response.concat(con.getResponseMessage());
+		return response;
+	}
+	
+	public String executeSynchronous(String action) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	// create a URL
+	private HttpURLConnection createGetConn() throws Exception {
+		String urlString = baseUrl.concat("/GetValue");
+		URL url = new URL(urlString);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setDoOutput(true);
+		con.setRequestMethod("GET");
+
+		return con;
+	}
+
+	// create a URL
+	private HttpURLConnection createPostConn(float addVal) throws Exception {
+		String urlParams = "?AddValue=".concat(String.valueOf(addVal));
+		byte[] postData = urlParams.getBytes(StandardCharsets.UTF_8);
+
+		URL url = new URL(baseUrl);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setDoOutput(true);
+		con.setRequestMethod("POST");
+		con.setRequestProperty("Content-Type", "application/json");
+		con.setRequestProperty("charset", "utf-8");
+		con.setRequestProperty("Content-Length", Integer.toString(postData.length));
+		con.setDoOutput(true);
+		con.getOutputStream().write(postData);
+		
+//		try {
+//			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+//			wr.write(postData);
+//			wr.close();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} 
+		
+		return con;
+	}
+
+
+
+}

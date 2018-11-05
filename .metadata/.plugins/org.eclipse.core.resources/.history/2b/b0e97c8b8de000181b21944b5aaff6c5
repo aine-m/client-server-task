@@ -1,0 +1,5 @@
+package datumizeclient.component;
+
+public enum RequestTypes {
+
+}

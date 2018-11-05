@@ -1,0 +1,32 @@
+package datumizeclient.component;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+
+//https://codereview.stackexchange.com/questions/39123/synchronous-and-asynchronous-behavior-for-client
+
+
+public abstract class AbstractRemoteCall<T> implements RemoteCall<T> {
+
+	 private final ExecutorService executor;
+
+	    public AbstractRemoteCall(ExecutorService executor) {
+	        this.executor = executor;
+	    }
+
+	    // note, final so it cannot be overridden in a sub class.
+	    // note, action is final so it can be passed to the callable.
+	    public final Future<T> executeAsynchronous(final String action) {
+
+	        Callable<T> task = new Callable<T>() {
+
+	            public T call() throws Exception {
+	                return executeSynchronous(action);
+	            }
+
+	        };
+
+	        return executor.submit(task);
+	    }
+	}

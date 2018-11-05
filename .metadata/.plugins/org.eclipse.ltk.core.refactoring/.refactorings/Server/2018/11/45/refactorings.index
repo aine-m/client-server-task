@@ -1,0 +1,10 @@
+1541360296845	Rename type 'AppHttpServer'
+1541360760629	Rename method 'handler'
+1541362657161	Delete element
+1541369598635	Rename package 'Datumize.Server'
+1541370193338	Delete element
+1541370204844	Delete element
+1541370210531	Delete element
+1541428749071	Rename method 'matchRequest'
+1541430975435	Rename method 'postValueAdder'
+1541431716624	Rename local variable 'toMatch'

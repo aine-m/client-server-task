@@ -1,0 +1,31 @@
+package datumizeclient.component;
+
+public class App 
+{
+	
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello from Client!" );
+        GetConfigSettings config = new GetConfigSettings();
+        AppClient client = new AppClient();
+        
+        if(config.runAsync) {
+        	 try {
+     			client.executeAsynchronous(RequestTypes.POST);
+     			client.executeAsynchronous(RequestTypes.GET);
+     		} catch (Exception e) {
+     			e.printStackTrace();
+     		}
+        }else {
+        	 try {
+     			client.executeSynchronous(RequestTypes.POST);
+     			client.executeSynchronous(RequestTypes.GET);
+     		} catch (Exception e) {
+     			e.printStackTrace();
+     		}
+        }
+        
+        
+       
+    }
+}

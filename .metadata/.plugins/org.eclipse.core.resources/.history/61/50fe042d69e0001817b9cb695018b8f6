@@ -1,0 +1,11 @@
+package Datumize.Server;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        AppHttpServer server = new AppHttpServer(8080, "/GetValue", "/AddValue/");
+        server.start();        
+    }
+}

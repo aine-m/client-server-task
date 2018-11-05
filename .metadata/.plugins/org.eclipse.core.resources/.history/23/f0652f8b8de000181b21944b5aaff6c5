@@ -1,0 +1,10 @@
+package datumizeclient.component;
+
+public class AppClient extends AbstractRemoteCall<String> {
+
+	public String executeSynchronous(String action) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

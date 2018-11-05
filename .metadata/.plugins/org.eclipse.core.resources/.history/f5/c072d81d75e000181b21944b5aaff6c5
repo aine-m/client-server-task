@@ -1,0 +1,27 @@
+package Datumize.Server;
+
+import java.nio.charset.StandardCharsets;
+
+public class AppService {
+	
+	private static int totalValue = 0;
+	
+	public byte[] handlePost(byte[] requestBody) {
+		
+		String s = new String(requestBody, StandardCharsets.UTF_8).trim();
+		System.out.println(s);
+		System.out.println(s.length());
+		
+		
+		//String s1 = s.replaceAll("\\D+",""); 
+		String s1 = s.substring(4);
+		System.out.println("S1: " + s1);
+		
+//		int i = Integer.parseInt(s1);
+//		System.out.println(i);
+		
+		return new String(requestBody).trim().getBytes();
+	}
+	
+
+}

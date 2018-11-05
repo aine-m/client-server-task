@@ -1,0 +1,9 @@
+package Datumize.Server;
+
+public class AppService {
+	
+	public byte[] handleGet(byte[] requestBody) {
+		return new String(requestBody).trim().getBytes();
+	}
+
+}

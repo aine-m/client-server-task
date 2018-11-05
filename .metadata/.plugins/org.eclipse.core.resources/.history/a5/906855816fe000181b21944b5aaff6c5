@@ -1,0 +1,24 @@
+package Datumize.Server;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.logging.Logger;
+
+import com.sun.net.httpserver.HttpContext;
+import com.sun.net.httpserver.HttpServer;
+
+public class AppServer {
+
+	public static void runServer(final AppController controller, int port) {
+		HttpServer server = null;
+		try {
+			server = HttpServer.create(new InetSocketAddress(port), 0);
+			HttpContext context = server.createContext("/", controller);
+			server.setExecutor(null);
+			server.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+package Datumize.Client;
+
+public class HttpClientRequests {
+
+}

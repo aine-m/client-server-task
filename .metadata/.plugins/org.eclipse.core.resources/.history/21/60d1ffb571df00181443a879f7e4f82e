@@ -1,0 +1,21 @@
+package Datumize.Server;
+
+/**
+ * @author hp
+ *
+ */
+public class SumValue {
+	
+	private static int sumValue;
+	
+	public static void addToValue(int amount) {
+		sumValue += amount;
+	}
+	
+	public static int getValue() {
+		return sumValue;
+	}
+	
+	
+
+}

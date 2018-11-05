@@ -1,0 +1,2 @@
+#Config properties for Client
+runAsync = false;

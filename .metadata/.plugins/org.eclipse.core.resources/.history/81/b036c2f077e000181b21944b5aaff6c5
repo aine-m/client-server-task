@@ -1,0 +1,25 @@
+package Datumize.Server;
+
+import java.nio.charset.StandardCharsets;
+
+public class AppService {
+	
+	private static int totalValue = 0;
+	
+	public byte[] handlePost(byte[] requestBody) {
+		
+		String s = new String(requestBody, StandardCharsets.UTF_8).trim();
+		System.out.println("String: " + s);
+		
+		int addVal = Integer.parseInt(s);
+		System.out.println("Int: " + addVal);
+
+		totalValue += addVal;
+		System.out.println("Val: " + totalValue);
+	
+		//return new String(requestBody).trim().getBytes();
+		return String.valueOf(totalValue).trim().getBytes();
+	}
+	
+
+}

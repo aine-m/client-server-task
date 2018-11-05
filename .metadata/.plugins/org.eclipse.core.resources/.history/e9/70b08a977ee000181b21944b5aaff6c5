@@ -1,0 +1,30 @@
+//package Datumize.Server;
+//
+//import java.io.IOException;
+//import java.io.OutputStream;
+//
+//import com.sun.net.httpserver.HttpExchange;
+//import com.sun.net.httpserver.HttpHandler;
+//
+//public class AppGetHttpHandler implements HttpHandler {
+//
+//	public void handle(HttpExchange httpExchange) throws IOException {
+//		System.out.println( "In GET handler" );
+//		try {
+//			int response = SumValue.getValue();
+//			httpExchange.sendResponseHeaders(200, 0);
+//			System.out.println( SumValue.getValue() );
+//			OutputStream os = httpExchange.getResponseBody();
+//			os.write(response);
+//			os.close();
+//			System.out.println( "Finished GET handler" );
+//		} catch(IOException e) {
+//			//handle exception
+//			//httpExchange.sendResponseHeaders(400 , arg1);
+//		}
+//		
+//	}
+//
+//}
+//
+//

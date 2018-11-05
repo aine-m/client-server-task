@@ -1,0 +1,59 @@
+package Datumize.Server;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import static java.net.HttpURLConnection.HTTP_OK;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+
+public class AppController implements HttpHandler {
+
+	private AppService service = new AppService();
+	private byte[] response;
+
+	public void handle(HttpExchange httpExchange) throws IOException {
+		matchRequest(httpExchange);
+		createResponse(httpExchange);
+	}
+
+	public void getValue() {
+		response = service.handleGet();
+	}
+
+	public void postValueAdder(InputStream inputStream) throws IOException {
+		
+		response = service.handlePost(readBody(inputStream));
+		inputStream.close();
+	}
+
+	private byte[] readBody(InputStream inputStream) throws IOException {
+		byte[] reqBody = new byte[10];
+		int data = inputStream.read(reqBody);
+		while (data != -1) {
+			data = inputStream.read(reqBody);
+		}
+		return reqBody;
+	}
+
+	private void matchRequest(HttpExchange httpExchange) throws IOException {
+		String toMatch = httpExchange.getRequestURI().toString().toLowerCase();
+		if (toMatch.contains("get".toLowerCase())) {
+			getValue();
+		} else if (toMatch.contains("add".toLowerCase())) {
+			postValueAdder(httpExchange.getRequestBody());
+		} else {
+			response = "Request not recognised.  No action taken.".getBytes();
+		}
+	}
+
+	private void createResponse(HttpExchange httpExchange) throws IOException {
+		httpExchange.sendResponseHeaders(HTTP_OK, response.length);
+		OutputStream os = httpExchange.getResponseBody();
+		os.write(response);
+		os.close();
+	}
+
+}

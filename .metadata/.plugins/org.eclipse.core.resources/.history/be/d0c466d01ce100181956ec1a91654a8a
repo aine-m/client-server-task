@@ -1,0 +1,45 @@
+package datumizeclient.component;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class ConfigSettings {
+
+	boolean runAsync = false;
+	InputStream inputStream = null;
+
+	/*
+	 * Read the config.properties file and determine whether client is to run
+	 * synchronously or asynchronously
+	 */
+	public boolean getPropValues() throws IOException {
+		App.logger.info("Retrieving configuration properties");
+		try {
+			Properties prop = new Properties();
+			String propFileName = "config.properties";
+			inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
+			
+			
+			if (inputStream != null) {
+				prop.load(inputStream);
+			} else {
+				App.logger.warning("Property file '" + propFileName
+						+ "' not found in the classpath.  Client will be run in synchronous mode.");
+			}
+			// get the config setting
+			runAsync = Boolean.parseBoolean(prop.getProperty("runAsync"));
+
+		} catch (Exception e) {
+			System.out.println("Exception: " + e);
+		} finally {
+			if(inputStream != null) {
+				inputStream.close();
+			}			
+		}
+		
+		App.logger.info("Configuration properties: run asynchronously: " + runAsync);
+		return runAsync;
+	}
+}
