@@ -52,8 +52,8 @@
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
 	</section>
 	<section name="RefactoringWizard.preview">
-		<item value="570" key="width"/>
-		<item value="370" key="height"/>
+		<item value="560" key="width"/>
+		<item value="360" key="height"/>
 	</section>
 	<section name="JavaBuildConfigurationBlock">
 		<item value="false" key="expanded2"/>

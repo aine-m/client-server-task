@@ -23,7 +23,7 @@ public class AppServer {
 			App.logger.info("Starting server");
 			server.start();
 		} catch (IOException e) {
-			App.logger.severe("Unable to start server");
+			App.logger.severe("Exception occurred when creating or starting server. Unable to start server");
 			App.logger.log(Level.SEVERE, e.getMessage(), e);
 			e.printStackTrace();
 		}

@@ -1,5 +1,6 @@
 package datumizeclient.component;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -15,53 +16,29 @@ public abstract class AbstractRemoteCall<T> implements RemoteCall<T> {
 	public AbstractRemoteCall(ExecutorService executor) {
 		this.executor = executor;
 	}
-
-//	// note, final so it cannot be overridden in a sub class.
-//	// note, action is reqType so it can be passed to the callable.
-//	/**
-//	 * Method to execute the request asynchronously. This method creates a callable
-//	 * task that is run by an ExecutorService instance. A Future value is returned
-//	 * by the method, allowing execution of a program to continue while the
-//	 * asynchronous method will complete at some point in the future. The method
-//	 * makes a call to the executeSynchronous method, as the functionality is the
-//	 * same.
-//	 * 
-//	 */
-//	public final Future<T> executeAsynchronous(final RequestTypes reqType) {
-//
-//		Callable<T> task = new Callable<T>() {
-//
-//			public T call() throws Exception {
-//				return executeSynchronous(reqType);
-//			}
-//
-//		};
-//
-//		return executor.submit(task);
-//	}
 	
 	
 	// note, final so it cannot be overridden in a sub class.
-	// note, action is reqType so it can be passed to the callable.
+	// note, conn is final so it can be passed to the callable.
 	/**
-	 * Method to execute the request asynchronously. This method creates a callable
-	 * task that is run by an ExecutorService instance. A Future value is returned
-	 * by the method, allowing execution of a program to continue while the
-	 * asynchronous method will complete at some point in the future. The method
-	 * makes a call to the executeSynchronous method, as the functionality is the
-	 * same.
+	 * Method to execute the request asynchronously. The method
+	 * creates a Callable from the synchronous method.
 	 * 
+	 * @param conn
+	 * @return Future
+	 * @throws IOException
 	 */
 	public final Future<T> executeAsynchronous(final HttpURLConnection conn) {
-		App.logger.info("Running asynchronous mode");
+		App.logger.info("Execute Asynchronous method called.");
 		Callable<T> task = new Callable<T>() {
-
-			public T call() throws Exception {
+			
+			public T call() throws IOException  {
+				App.logger.info("Execute Asynchronous method created Callable task.");
 				return executeSynchronous(conn);
 			}
 
 		};
-
+		App.logger.info("Execute Asynchronous method submitting task to Executor.");
 		return executor.submit(task);
 	}
 }

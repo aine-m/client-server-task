@@ -1,93 +1,111 @@
 package datumizeclient.component;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 //https://codereview.stackexchange.com/questions/39123/synchronous-and-asynchronous-behavior-for-client
 
 public class AppClient extends AbstractRemoteCall<String> {
 
 	private final String baseUrl = "http://localhost:8080";
-	private static boolean runAsync = false;
-				
+	public boolean runAsync = false;
+
 	/**
-	 * Creates a maximum of 10 threads that are reused when available. The number of
-	 * threads can be changed.
+	 * Creates a maximum of numThreads threads that are reused when available.
 	 */
-	public AppClient() {
-		super(Executors.newFixedThreadPool(10));
+	public AppClient(int numThreads) {
+		super(Executors.newFixedThreadPool(numThreads));
 		getConfig();
 	}
 
-	
-	public Response<Object> add(float addVal) throws IOException, Exception {
+	/**
+	 * Synchronous call to the add() method
+	 * 
+	 * @param addVal
+	 * @return String 
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public String addSync(float addVal) throws IOException, Exception {
 		HttpURLConnection con = createPostConn(addVal);
-		if(runAsync) {
-			return new Response<>(executeAsynchronous(con));
-		}else {
-			return new Response<>(executeSynchronous(con));
-		}	
+		String value = executeSynchronous(con);
+		App.logger.info("Synchronous add method running...adding value = " + addVal);
+		return value;
 	}
-	
-	public  Response<Object> get() throws IOException, Exception {
+
+	/**
+	 * Asynchronous call to the add() method. 
+	 * 
+	 * @param addVal
+	 * @return Future<String> 
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public Future<String> addAsync(float addVal) throws IOException {
+		App.logger.info("Asynchronous add method running...adding value = " + addVal);
+		HttpURLConnection con = createPostConn(addVal);
+		Future<String> futureVal = executeAsynchronous(con);
+		return futureVal;
+	}
+
+	/**
+	 * Synchronous call to get()
+	 * 
+	 * @return String
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public String getSync() throws IOException {
 		HttpURLConnection con = createGetConn();
-		if(runAsync) {
-			return new Response<>(executeAsynchronous(con));
-		}else {
-			return new Response<>(executeSynchronous(con));
-		}
+		String value = executeSynchronous(con);
+		App.logger.info("Synchronous get method running...");
+		return value;
 	}
-	
-	
-//	/**
-//	 * Accepts the request type (GET or POST) and creates the appropriate
-//	 * HttpURLConnection. The connection is made to the server and response
-//	 * returned.
-//	 * 
-//	 * For the post request, the float value is created from a random number
-//	 * generator.
-//	 */
-//	public String executeSynchronous(RequestTypes requestType) throws Exception {
-//		HttpURLConnection con;
-//		String response;
-//		
-//		if (requestType.equals(RequestTypes.GET)) {
-//			con = createGetConn();
-//		} else if (requestType.equals(RequestTypes.POST)) {
-//			//create random float value
-//			Random rand = new Random();
-//			float addVal = rand.nextFloat() * 10;
-//			con = createPostConn(addVal);
-//		} else {
-//			URL url = new URL(baseUrl);
-//			con = (HttpURLConnection) url.openConnection();
-//		}
-//
-//		App.logger.info("About to make the URL connection");
-//		con.connect();		
-//		response = Integer.toString(con.getResponseCode());
-//		response.concat(con.getResponseMessage());
-//		return response;
-//	}
-//	
-	public String executeSynchronous(HttpURLConnection con) throws IOException {
-		App.logger.info("Running synchronous mode");
+
+	/**
+	 * Asynchronous call to get()
+	 * 
+	 * @return Future<String>
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public Future<String> getAsync() throws IOException, Exception {
+		HttpURLConnection con = createGetConn();
+		Future<String> futureVal = executeAsynchronous(con);
+		while (!futureVal.isDone()) {
+			App.logger.info("Asynchronous get method running...");
+		}
+		return futureVal;
+	}
+
+	/**
+	 * @throws IOException 
+	 * 
+	 */
+	public String executeSynchronous(HttpURLConnection con) throws IOException  {
+		App.logger.info("Execute Synchronous method called.");
 		String response;
 		con.connect();
-		response = Integer.toString(con.getResponseCode());
-		response.concat(con.getResponseMessage());
+		response = getResponseBody(con);
 		return response;
 	}
 
 	/**
 	 * Create a GET url
+	 * 
 	 * @return HttpURLConnection
+	 * @throws MalformedURLException 
 	 * @throws Exception
 	 */
-	private HttpURLConnection createGetConn() throws Exception {
+	private HttpURLConnection createGetConn() throws MalformedURLException, IOException {
 		App.logger.info("Creating GET url");
 		String urlString = baseUrl.concat("/GetValue");
 		URL url = new URL(urlString);
@@ -100,11 +118,12 @@ public class AppClient extends AbstractRemoteCall<String> {
 
 	/**
 	 * Create a POST url with a float value in the request body
+	 * 
 	 * @param addVal
 	 * @return HttpURLConnection
 	 * @throws Exception
 	 */
-	private HttpURLConnection createPostConn(float addVal) throws Exception {
+	private HttpURLConnection createPostConn(float addVal) throws MalformedURLException, IOException {
 		App.logger.info("Creating POST url with float addVal=" + addVal);
 		String urlString = baseUrl.concat("/AddValue");
 		URL url = new URL(urlString);
@@ -123,15 +142,48 @@ public class AppClient extends AbstractRemoteCall<String> {
 		App.logger.info("POST url created");
 		return con;
 	}
-	
+
+	/**
+	 * Retrieve configuration settings for client.
+	 */
 	private void getConfig() {
+		App.logger.info("Retrieving configuration settings");
 		ConfigSettings config = new ConfigSettings();
 		try {
 			runAsync = config.getPropValues();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+		} catch (IOException e) {
+			App.logger.info("Exception occurred when getting configuration settings.  Please check the config.properties file.");
+			App.logger.info(e.getMessage());
+			e.printStackTrace();
 		}
 	}
+
 	
+	/**
+	 * Method to get the response body from the HTTP request response.
+	 * 
+	 * @param conn
+	 * @return String
+	 * @throws IOException
+	 */
+	private String getResponseBody(HttpURLConnection conn) throws IOException {
+		int responseCode = conn.getResponseCode();
+		InputStream inputStream;
+		if (200 <= responseCode && responseCode <= 299) {
+			inputStream = conn.getInputStream();
+		} else {
+			inputStream = conn.getErrorStream();
+		}
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+		StringBuilder response = new StringBuilder();
+		String currentLine;
+
+		while ((currentLine = br.readLine()) != null)
+			response.append(currentLine);
+
+		br.close();
+		return response.toString();
+	}
 
 }

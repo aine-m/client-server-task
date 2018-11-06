@@ -29,9 +29,7 @@ public class ConfigSettings {
 						+ "' not found in the classpath.  Client will be run in synchronous mode.");
 			}
 			runAsync = Boolean.parseBoolean(prop.getProperty("runAsync"));
-			
-			App.logger.info("PROPERTY VALUE: " + prop.getProperty("runAsync"));
-			App.logger.info("PROPERTY VALUE: " + String.valueOf(runAsync));
+
 		} catch (Exception e) {
 			App.logger.warning("Exception when retrieving configuration properties");
 			App.logger.warning(e.getMessage());

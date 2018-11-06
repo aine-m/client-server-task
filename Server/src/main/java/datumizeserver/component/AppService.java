@@ -17,6 +17,7 @@ public class AppService {
 	public byte[] handlePost(byte[] requestBody) {
 		String requestString = new String(requestBody, StandardCharsets.UTF_8).trim();
 		float addVal = Float.parseFloat(requestString);
+		App.logger.info("In POST service handler. Adding value " + String.valueOf(totalValue));
 		totalValue += addVal;
 		return String.valueOf(totalValue).trim().getBytes();
 	}
@@ -27,7 +28,7 @@ public class AppService {
 	 * @return byte array for HTTP response body
 	 */
 	public byte[] handleGet() {
-		App.logger.info("CURRENT GET VALUE: " + String.valueOf(totalValue));
+		App.logger.info("In GET service handler. Returning value " + String.valueOf(totalValue));
 		return String.valueOf(totalValue).trim().getBytes();
 	}
 

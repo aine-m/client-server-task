@@ -19,7 +19,7 @@ public class AppController implements HttpHandler {
 	 * This method calls the directRequest method and createResponse method.
 	 */
 	public void handle(HttpExchange httpExchange) throws IOException {
-		App.logger.info("Handling request");
+		App.logger.info("Controller is handling the request");
 		directRequest(httpExchange);
 		createResponse(httpExchange);
 	}
@@ -35,7 +35,6 @@ public class AppController implements HttpHandler {
 		App.logger.info("Directing request to GET or POST handlers");
 		String url = httpExchange.getRequestURI().toString().toLowerCase();
 		String reqType = httpExchange.getRequestMethod();
-		App.logger.info(url);
 
 		// ensure request type and request url are correct before taking action
 		if (reqType.equals("GET") && url.equals("/GetValue".toLowerCase())) {
@@ -56,7 +55,7 @@ public class AppController implements HttpHandler {
 	 * @throws IOException
 	 */
 	private void createResponse(HttpExchange httpExchange) throws IOException {
-		App.logger.info("Creating response to request");
+		App.logger.info("Creating response for request");
 		httpExchange.sendResponseHeaders(HTTP_OK, response.length);
 		OutputStream os = httpExchange.getResponseBody();
 		os.write(response);
@@ -92,6 +91,7 @@ public class AppController implements HttpHandler {
 	 * @throws IOException
 	 */
 	private byte[] readBody(InputStream inputStream) throws IOException {
+		App.logger.info("Reading HTTP request body");
 		byte[] reqBody = new byte[10];
 		int data = inputStream.read(reqBody);
 		while (data != -1) {

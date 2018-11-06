@@ -1,6 +1,8 @@
 package datumizeclient.component;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -11,52 +13,47 @@ public class App {
 	static AppClient client;
 
 	public static void main(String[] args) {
-		int sum = 0;
 		startLog();
-		client = new AppClient();
-		try {
-			for(int i = 1; i < 10; i++) {
-				client.add(i);
-				client.get();
-				sum+=i;
-				logger.info("SUM VALUE: " + String.valueOf(sum));
-			}
-		}catch(Exception e) {
-			logger.warning("Exception in Client main method!");
-			logger.warning(e.getMessage());
+		client = new AppClient(10);
+
+		if (client.runAsync) {
+			try {
+				Future<String> f1 = client.addAsync(1);
+				Future<String> f2 = client.addAsync(2);
+
+				while (!(f1.isDone() && f2.isDone())) {
+					System.out.println(String.format("f1 is %s and f2 is %s",
+							f1.isDone() ? "done" : "not done", f2.isDone() ? "done" : "not done"));
+				}
+
+				logger.info(f1.get());
+				logger.info(f2.get());
+
+			} catch (IOException | InterruptedException | ExecutionException e) {
+				logger.severe("Exception occurred during client execution");
+				logger.severe(e.getMessage());
+				e.printStackTrace();
+			} 
+
 		}
 		
-		
-//		ConfigSettings config = new ConfigSettings();
-//		//set default config to synchronous
-//		boolean runAsync = false;
-//		try {
-//			runAsync = config.getPropValues();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-//		AppClient client = new AppClient();
-//
-//		if (runAsync) {
-//			try {
-//				logger.info("Running asynchronously");
-//				client.executeAsynchronous(RequestTypes.POST);
-//				client.executeAsynchronous(RequestTypes.GET);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		} else {
-//			try {
-//				logger.info("Running synchronously");
-//				client.executeSynchronous(RequestTypes.POST);
-//				client.executeSynchronous(RequestTypes.GET);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
+		if(!client.runAsync) {
+			try {
+				for(int i = 1; i < 10; i++) {
+					client.addSync(i);
+					client.getSync();
+				}
+			}catch(Exception e) {
+				logger.severe("Exception in Client main method!");
+				logger.severe(e.getMessage());
+			}
+		}
 
 	}
-	
+
+	/**
+	 * Starts the Logger instance.  File location can be changed in the FileHandler().
+	 */
 	public static void startLog() {
 		try {
 			// This block configure the logger with handler and formatter
