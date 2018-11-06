@@ -1263,3 +1263,98 @@
 2018-11-06 16:41:01,091 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
 2018-11-06 16:41:01,107 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-06 16:41:01,115 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 17:08:56,780 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-06 17:12:22,540 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:12:22,542 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 17:12:22,546 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:12:22,546 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 17:14:13,863 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:14:13,869 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 17:14:13,874 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:14:13,874 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 17:15:07,052 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:15:07,053 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 17:15:07,056 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:15:07,056 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 17:16:21,840 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:16:21,840 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 17:16:21,843 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 17:16:21,869 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:34:39,436 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:34:39,436 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:34:39,439 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:34:39,456 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:35:52,168 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:35:52,192 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:35:52,214 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:35:52,228 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:38:26,289 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:38:26,290 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:38:26,294 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:38:26,394 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:38:48,543 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:38:48,565 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:38:48,583 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:38:48,599 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:40:08,721 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:40:08,722 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:40:08,724 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:40:08,739 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:40:41,775 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:40:41,802 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:40:41,817 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:40:41,834 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:49:06,766 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:49:06,767 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:49:06,775 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:49:06,795 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:56:07,113 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:56:07,125 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:56:07,138 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:56:07,148 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 20:56:47,526 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:56:47,527 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 20:56:47,529 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 20:56:47,564 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:02:05,666 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:02:05,667 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:02:05,690 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:02:05,701 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:04:49,136 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:04:49,136 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:04:49,138 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:04:49,157 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:05:40,988 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:05:41,015 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:05:41,043 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:05:41,088 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:25:09,506 [Worker-71] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Client:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\pom.xml.
+2018-11-06 21:25:10,320 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:25:10,320 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\main\resources
+2018-11-06 21:25:10,337 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:25:10,346 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\test\resources
+2018-11-06 21:25:10,543 [Worker-71] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 21:25:10,745 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:25:10,755 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:25:10,758 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:25:10,758 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:44:04,757 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:44:04,760 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:44:04,795 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:44:04,811 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:54:00,991 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:01,015 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\main\resources
+2018-11-06 21:54:01,049 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:01,057 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\test\resources
+2018-11-06 21:54:01,152 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:01,185 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:54:01,189 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:01,189 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:54:08,254 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:08,309 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 21:54:08,326 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:08,336 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 21:54:32,971 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:32,985 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\main\resources
+2018-11-06 21:54:32,998 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 21:54:33,012 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\test\resources

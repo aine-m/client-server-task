@@ -6,6 +6,11 @@ public class AppService {
 
 	private static float totalValue = 0;
 
+	//For testing purposes
+	public float getTotalValue() {
+		return totalValue;
+	}
+
 	/**
 	 * Converts the HTTP request body to a float and adds it to the totalValue
 	 * field. The updated value is returned to the calling function to make up the

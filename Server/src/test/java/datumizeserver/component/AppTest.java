@@ -1,4 +1,4 @@
-package Datumize.Server;
+package datumizeserver.component;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

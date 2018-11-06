@@ -8,3 +8,5 @@
 1541428749071	Rename method 'matchRequest'
 1541430975435	Rename method 'postValueAdder'
 1541431716624	Rename local variable 'toMatch'
+1541524338697	Rename package 'Datumize.Server'
+1541524506051	Delete element

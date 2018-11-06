@@ -23,7 +23,11 @@ public class AppClient extends AbstractRemoteCall<String> {
 	 */
 	public AppClient(int numThreads) {
 		super(Executors.newFixedThreadPool(numThreads));
-		getConfig();
+		try{
+			getConfig();
+		}catch(NullPointerException e) {
+			App.logger.warning("Exception occurred when locating config.properties file. \nEnsure file is added to classpath.\nRunning in Synchronous mode.");
+		}
 	}
 
 	/**
