@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpServer"/>
 <fullyQualifiedTypeName name="Datumize.Server.AppHttpServer"/>
 <fullyQualifiedTypeName name="Datumize.Server.AppHttpHandler"/>
-<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
 <fullyQualifiedTypeName name="Datumize.Server.AppGetHttpHandler"/>
 <fullyQualifiedTypeName name="Datumize.Server.AppPutHttpHandler"/>
 <fullyQualifiedTypeName name="Datumize.Server.SumValue"/>
@@ -36,7 +35,6 @@
 <fullyQualifiedTypeName name="datumizeclient.component.RequestTypes"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.util.concurrent.RunnableScheduledFuture"/>
 <fullyQualifiedTypeName name="datumizeclient.component.GetConfigSettings"/>
 <fullyQualifiedTypeName name="java.util.logging.Logger"/>
@@ -54,4 +52,9 @@
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="datumizeserver.component.AppService"/>
+<fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 </qualifiedTypeNameHistroy>

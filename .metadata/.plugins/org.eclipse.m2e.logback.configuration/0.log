@@ -1358,3 +1358,47 @@
 2018-11-06 21:54:32,985 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\main\resources
 2018-11-06 21:54:32,998 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-06 21:54:33,012 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Client\src\test\resources
+2018-11-06 22:47:55,529 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-06 22:52:59,746 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 22:53:00,790 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/junit/3.8.1/junit-3.8.1.pom
+2018-11-06 22:53:00,808 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.junit:junit:jar:3.8.1 is missing, no dependency information available
+2018-11-06 22:53:01,134 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/junit/3.8.1/junit-3.8.1.jar
+2018-11-06 22:53:02,644 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:53:02,644 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 22:53:02,648 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:53:02,649 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 22:56:16,521 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.12.0/junit-4.12.0.pom
+2018-11-06 22:56:16,545 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:4.12.0 is missing, no dependency information available
+2018-11-06 22:56:17,039 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.12.0/junit-4.12.0.jar
+2018-11-06 22:56:17,674 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 22:56:17,680 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:4.12.0 is missing, no dependency information available
+2018-11-06 22:56:18,893 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:56:18,894 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 22:56:18,917 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:56:18,918 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 22:57:39,384 [Worker-22] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 22:57:39,954 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:40,005 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 22:57:40,029 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:40,061 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 22:57:42,533 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:42,549 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 22:57:42,571 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:42,612 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 22:57:51,094 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 22:57:51,122 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:4.12.0 is missing, no dependency information available
+2018-11-06 22:57:51,590 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:51,605 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 22:57:51,610 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:57:51,625 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 23:00:00,673 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-06 23:01:53,844 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:4.12.0 is missing, no dependency information available
+2018-11-06 23:02:25,746 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Datumize:Server:0.0.1-SNAPSHOT @ C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\pom.xml.
+2018-11-06 23:02:26,992 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 23:02:26,993 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 23:02:27,002 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 23:02:27,002 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources
+2018-11-06 23:02:30,934 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 23:02:30,934 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\main\resources
+2018-11-06 23:02:30,938 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 23:02:30,938 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\hp\Documents\Job Applications\Datumize\backend-qualification-task\Server\src\test\resources

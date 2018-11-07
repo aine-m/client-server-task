@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=Server/C:\/Program Files\/Java\/jre1.8.0_191\/lib\/rt.jar&lt;com.sun.net.httpserver(HttpHandler.class[HttpHandler" modifiers="1537" timestamp="1541103530160"/>
-<typeInfo handle="=Client/src\/main\/java&lt;datumizeclient.component{RemoteCall.java[RemoteCall" modifiers="513" timestamp="1541520080955"/>
-<typeInfo handle="=Client/src\/main\/java&lt;datumizeclient.component{AbstractRemoteCall.java[AbstractRemoteCall" modifiers="1025" timestamp="1541520381826"/>
+<typeInfo handle="=Client/src\/main\/java&lt;datumizeclient.component{RemoteCall.java[RemoteCall" modifiers="513" timestamp="1541521428258"/>
+<typeInfo handle="=Client/src\/main\/java&lt;datumizeclient.component{AbstractRemoteCall.java[AbstractRemoteCall" modifiers="1025" timestamp="1541521428290"/>
+<typeInfo handle="=Server/src\/main\/java&lt;datumizeserver.component{AppController.java[AppController" modifiers="1" timestamp="1541541248101"/>
 </typeInfoHistroy>
